@@ -33,7 +33,7 @@ let top = get_top(Language::English, 10, NgramSize::One);
 
 ### Simple
 
-You can specify features of language ()`english`) and ngram size (`one`)
+You can specify features of language (`english`) and ngram size (`one`)
 
 ```shell
 cargo run --example simple --no-default-features -F english -F one --release
@@ -45,7 +45,7 @@ Dataset version 20200217 from [Google Books](https://storage.googleapis.com/book
 
 ## License
 
-MIT
+[MIT](./LICENSE)
 
 ## Copyright
 
