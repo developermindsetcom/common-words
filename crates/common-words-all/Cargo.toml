@@ -3,7 +3,7 @@ name = "common-words-all"
 description = "Most common words sorted by ngram frequency."
 repository = "https://github.com/developermindsetcom/common-words"
 authors = ["Eugene Hauptmann"]
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 
 [dependencies]

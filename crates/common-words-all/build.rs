@@ -6,7 +6,9 @@ use std::io::prelude::*;
 use std::path::PathBuf;
 
 const PATTERN: &str = "../../data/ngrams/**/*.csv";
+#[allow(dead_code)]
 const OUTPUT_PATH: &str = "src/generated";
+#[allow(dead_code)]
 const OUTPUT_MOD: &str = "mod.rs";
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -17,6 +19,7 @@ struct Record {
     en: Option<String>,
 }
 
+#[allow(dead_code)]
 fn clean_name(name: String) -> String {
     let clean = name
         .split("-")
@@ -27,11 +30,13 @@ fn clean_name(name: String) -> String {
     format!("cwa_{clean}")
 }
 
+#[allow(dead_code)]
 fn get_language(name:String) -> String {
     let array = name.split("_").into_iter().collect::<Vec<&str>>();
     array[2].to_string()
 }
 
+#[allow(dead_code)]
 fn get_ngram_size(name:String) -> String {
     let array = name.split("_").into_iter().collect::<Vec<&str>>();
     let ngram = array[1].to_string();
@@ -53,6 +58,7 @@ fn get_ngram_size(name:String) -> String {
     return size.to_string()
 }
 
+#[allow(dead_code)]
 fn process_csv(path: &PathBuf) -> Result<()> {
     let name = path
         .file_name()
@@ -106,7 +112,8 @@ fn process_csv(path: &PathBuf) -> Result<()> {
     Ok(())
 }
 
-fn main() -> Result<()> {
+#[allow(dead_code)]
+fn build() -> Result<()> {
     let mut file = File::create(format!("{OUTPUT_PATH}/{OUTPUT_MOD}").as_str())?;
     let mut output: String = String::new();
 
@@ -139,7 +146,9 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-// use anyhow::Result;
-// fn main() -> Result<()>{
-//     Ok(())
-// }
+fn main() -> Result<()> {
+    println!("cargo::rerun-if-changed={PATTERN}");
+    println!("cargo::rerun-if-changed=build.rs");
+    // build()?; // uncomment if you want to generate the code again
+    Ok(())
+}
