@@ -4,7 +4,7 @@ description = "Most common words sorted by ngram frequency."
 repository = "https://github.com/developermindsetcom/common-words"
 authors = ["Eugene Hauptmann"]
 license = "MIT"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 
 [dependencies]
