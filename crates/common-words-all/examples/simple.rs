@@ -1,6 +1,4 @@
-
 use common_words_all::*;
-
 fn main() {
     let max = 10;
     let top = get_top(Language::English, max, NgramSize::One);

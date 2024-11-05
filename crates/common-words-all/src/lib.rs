@@ -4,7 +4,7 @@ pub mod types;
 use generated::*;
 pub use types::*;
 
-fn get_array(language: Language, size: NgramSize) -> Vec<Record<'static>> {
+pub fn get_array(language: Language, size: NgramSize) -> Vec<Record<'static>> {
     match (language, size) {
         #[cfg(all(feature = "chinese", feature = "one"))]
         (Language::Chinese, NgramSize::One) => cwa_1grams_chinese_simplified.to_vec(),
