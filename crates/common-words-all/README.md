@@ -49,4 +49,4 @@ Dataset version 20200217 from [Google Books](https://storage.googleapis.com/book
 
 ## Copyright
 
-© 2024, Eugene Hauptmann
+© 2024 - 2026, Eugene Hauptmann
